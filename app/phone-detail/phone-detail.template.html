@@ -1,0 +1,57 @@
+<img ng-src="{{$ctrl.mainImageUrl}}" alt="" class="phone">
+<h1>{{$ctrl.phone.name}}</h1>
+<p>{{$ctrl.phone.description}}</p>
+<ul class="phone-thumbs">
+	<li ng-repeat="img in $ctrl.phone.images">
+		<img ng-src="{{img}}"  ng-click="$ctrl.setImage(img)">
+	</li>
+</ul>
+<ul class="specs">
+	<li>
+		<span>Availability and Networks</span>
+		<dl>
+			<dt>Availability</dt>
+			<dd ng-repeat="availability in $ctrl.phone.availability">{{availability}}
+			</dd>
+		</dl>
+	</li>
+	<li>
+		<span>Bettery</span>
+		<dl>
+			<dt>Type</dt>
+			<dd>{{$ctrl.phone.bettery.type}}</dd>
+			<dt>Talk Time</dt>
+			<dd>{{$ctrl.phone.bettery.talkTime}}</dd>
+			<dt>Standby time (max)</dt>
+			<dd>{{$ctrl.phone.bettery.standbyTime}}</dd>
+		</dl>
+	</li>
+	<li>
+		<span>Storage and Memory</span>
+		<dl>
+			<dt>PAM</dt>
+			<dd>{{$ctrl.phone.storage.ram}}</dd>
+			<dt>Interanl Storage</dt>
+			<dd>{{ctrl.phone.storage.flash</dd>
+		</dl>
+	</li>
+	<li>
+		<span>Connectivity</span>
+		<dl>
+			<dt>Network Support</dt>
+			<dd>{{$ctrl.phone.connectivity.cell}}</dd>
+			<dt>WiFi</dt>
+			<dd>{{$ctrl.phone.connectivity.wifi}}</dd>
+			<dt>Bluetooth</dt>
+			<dd>{{$ctrl.phone.connectivity.bluetooth</dd>
+			<dt>Infrared</dt>
+			<dd>{{$ctrl.phone.connectivity.infrared | checkmark}}</dd>
+			<dt>GPS</dt>
+			<dd>{{$ctrl.phone.connectivity.gps | checkmark}}</dd>
+		</dl>
+	</li>
+	<li>
+		<span>Addtional Features</span>
+		<dd>{{$ctrl.phone.additionalFeatures}}</dd>
+	</li>
+</ul>
